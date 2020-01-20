@@ -1,8 +1,18 @@
 
     <!--============================= HEADER =============================-->
     <?php
-    include('header.php')
+    include('config.php');
+    include('header.php');
+    include('./include/public_fuction.php');
+
+    if (isset($_SESSION["user"])) {
+        $user = $_SESSION['user'];
+    } else {
+        $_SESSION['user']['user_role'] = 'user';
+        $user = $_SESSION['user'];
+    }
     ?>
+    
     <!--============================= HEADER =============================-->
     
 
