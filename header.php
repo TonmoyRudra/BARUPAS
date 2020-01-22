@@ -70,13 +70,12 @@
 </div> -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="author" content="Colorlib">
+    <meta name="author" content="Tonmoy Rudra">
     <meta name="description" content="#">
     <meta name="keywords" content="#">
     <!-- Favicons -->
@@ -150,13 +149,14 @@
                                         <span class="icon-arrow-down"></span>
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                        <a class="dropdown-item" href="#"> কেন্দ্রীয় কমিটি </a>
-                                        <a class="dropdown-item" href="#"> জেলা কমিটি </a>
-                                        <a class="dropdown-item" href="#"> গ্রাম কমিটি </a>
-                                        <a class="dropdown-item" href="#"> দেবালয় পরিষদ কমিটি </a>
-                                        <a class="dropdown-item" href="#"> গীতা সংঘ </a>
-                                        <a class="dropdown-item" href="#"> কীর্তন সংঘ</a>
-                                        <a class="dropdown-item" href="#"> উপদেষ্টা পরিষদ </a>
+                                        <a class="dropdown-item" href="./committeeList.php?type_id=1">  কেন্দ্রীয় কমিটি   </a>
+                                        <a class="dropdown-item" href="./committeeList.php?type_id=2"> জেলা কমিটি </a>
+                                        <a class="dropdown-item" href="./committeeList.php?type_id=3"> গ্রাম কমিটি </a>
+                                        <a class="dropdown-item" href="./committeeList.php?type_id=4"> দেবালয় পরিষদ কমিটি </a>
+                                        <a class="dropdown-item" href="./committeeList.php?type_id=5"> গীতা সংঘ </a>
+                                        <a class="dropdown-item" href="./committeeList.php?type_id=6"> কীর্তন সংঘ</a>
+                                        <a class="dropdown-item" href="./committeeList.php?type_id=7"> উপদেষ্টা পরিষদ </a>
+
                                     </div>
                                 </li>
 

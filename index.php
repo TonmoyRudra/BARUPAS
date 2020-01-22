@@ -186,8 +186,8 @@
                 </div>
             </div>
         </div>
-    </section> -->
-<!--//END FEATURED PLACES -->
+    </section>
+//END FEATURED PLACES -->
 <section class="light-bg booking-details_wrap">
     <div class="container">
         <div class="row">
