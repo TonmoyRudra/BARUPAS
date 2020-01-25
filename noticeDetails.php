@@ -3,10 +3,7 @@
 include('config.php');
 include('header.php');
 include('./include/public_fuction.php');
-// fetch single published notices by slug
-if (isset($_GET['slug'])) {
-    $notice = getNoticeBySlug($_GET['slug']);
-}
+
 if (isset($_SESSION["user"])) {
     $user = $_SESSION['user'];
 } else {
