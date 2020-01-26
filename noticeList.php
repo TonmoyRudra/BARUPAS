@@ -4,6 +4,7 @@ include('config.php');
 include('header.php');
 include('./include/public_fuction.php');
 // fetch single published notices by slug
+$noitces = '';
 $noitces = getPublishedNotices();
 
 if (isset($_SESSION["user"])) {
@@ -29,7 +30,7 @@ if (isset($_SESSION["user"])) {
                             <img src="images/dummy_profilePhoto.jpg" style="width: 250px;" class="img-fluid" alt="#">
                         </div> -->
                         <div class="" style="margin: 0;">
-
+                            <?php if($noitces): ?>
                             <?php foreach ($noitces as $notice) : ?>
                                 <div class="row">
                                     <div class="container-fluid">
@@ -50,7 +51,10 @@ if (isset($_SESSION["user"])) {
                                     </div>
                                 </div>
                             <?php endforeach ?>
-                        </div>
+                            <?php else: ?>
+                                <div style="font-size: 23px;color: #2196F3;"> কোন নোটিশ পাওয়া যায় নি। </div>
+                            <?php endif ?>
+                            </div>
                     </div>
                 </div>
             </div>

@@ -22,10 +22,7 @@
         // }
         return $notices;
     }
-    // fetch single published notices by slug
-    if (isset($_GET['slug'])) {
-        $notice = getNoticeBySlug($_GET['slug']);
-    }
+ 
     /* * * * * * * * * * * * * * *
     * Returns a single notice
     * * * * * * * * * * * * * * */
@@ -45,11 +42,7 @@
         return $notice;
     }
 
-    // Committee
-    if (isset($_GET['type_id'])) {
-        $committees = getAllPublishedCommittees($_GET['type_id']);
-        $committee_name = getCommitteeTypeInfoByTypeId($_GET['type_id']);
-    }
+  
     /* * * * * * * * * * * * * * *
     * get all published commitees
     * * * * * * * * * * * * * * */
@@ -66,10 +59,24 @@
     }
 
     /* * * * * * * * * * * * * * *
+    * get all commitee by Id
+    * * * * * * * * * * * * * * */
+    function getCommitteeById($id, $type_id) {
+        global $conn;
+
+        $sql = "SELECT * FROM committee WHERE id = $id AND type_id = $type_id";
+        $result = mysqli_query($conn, $sql);
+
+        // fetch query results as associative array.
+        $committee = mysqli_fetch_assoc($result);
+
+        return $committee;
+    }
+
+    /* * * * * * * * * * * * * * *
     * get all commitee type
     * * * * * * * * * * * * * * */
-    function getCommitteeTypes()
-    {
+    function getCommitteeTypes() {
         global $conn;
         // Get single post slug
         $sql = "SELECT * FROM committee_type";
@@ -87,8 +94,7 @@
     /* * * * * * * * * * * * * * *
     * get commitee type info by type_id
     * * * * * * * * * * * * * * */
-    function getCommitteeTypeInfoByTypeId($type_id)
-    {
+    function getCommitteeTypeInfoByTypeId($type_id) {
         global $conn;
         // Get single post slug
         $sql = "SELECT * FROM committee_type WHERE id =$type_id";

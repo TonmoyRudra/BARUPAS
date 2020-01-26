@@ -60,7 +60,7 @@
                                 <?php 
                                             echo "<tr>";
                                             echo "<td>" . $i . "</td>";
-                                            echo "<td> <a href=".BASE_URL.'noticeDetails.php?id='.$committee["id"]." target='_blank'>" . $committee['name'] . "</a></td>";
+                                            echo "<td> <a href=".BASE_URL . 'committeeDetails.php?type_id=' . $committee['type_id'] . '&id=' . $committee['id']." target='_blank'>" . $committee['name'] . "</a></td>";
                                             echo "<td>" . $committee['type_name'] . "</td>";
                                             echo "<td>" . $committee['created_user_name'] .'('. $committee['created_user_id']. ')' . "</td>";
                                             echo "<td>" . $committee['created_time'] . "</td>";

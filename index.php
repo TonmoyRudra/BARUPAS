@@ -4,6 +4,7 @@
         include('header.php');
         include('./include/public_fuction.php');
         // fetch all published notices
+        $noitces = '';
         $noitces = getPublishedNotices();
 ?>
 <!--============================= HEADER =============================-->
@@ -210,7 +211,7 @@
                             <img src="images/dummy_profilePhoto.jpg" style="width: 250px;" class="img-fluid" alt="#">
                         </div> -->
                         <div class="" style="margin: 0;">
-
+                        <?php if($noitces) : ?>
                         <?php foreach($noitces as $notice): ?>
                         <div class="row">
 								<div class="container-fluid">
@@ -231,6 +232,9 @@
 								</div>
                             </div>
                             <?php endforeach ?>
+                            <?php else: ?>
+                                <div style="font-size: 23px;color: #2196F3;"> কোন নোটিশ পাওয়া যায় নি। </div>
+                            <?php endif ?>
                         </div>
                     </div>
 

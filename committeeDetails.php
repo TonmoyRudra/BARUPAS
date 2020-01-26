@@ -3,9 +3,9 @@
 include('config.php');
 include('header.php');
 include('./include/public_fuction.php');
-// fetch single published notices by slug
-if (isset($_GET['slug'])) {
-    $notice = getNoticeBySlug($_GET['slug']);
+$committeeDetails = '';
+if (isset($_GET['id']) && $_GET['type_id']) {
+    $committeeDetails = getCommitteeById($_GET['id'], $_GET['type_id']);
 }
 if (isset($_SESSION["user"])) {
     $user = $_SESSION['user'];
@@ -18,7 +18,7 @@ if (isset($_SESSION["user"])) {
 <!--============================= HEADER =============================-->
 
 <section class="light-bg booking-details_wrap">
-    <?php if (!$notice) : ?>
+    <?php if (!$committeeDetails) : ?>
         <?php include('./404.php'); ?>
     <?php else : ?>
         <div class="styled-heading">
@@ -35,26 +35,26 @@ if (isset($_SESSION["user"])) {
                             <div class="" style="margin: 0;">
                                 <div class="full-post-div">
 
-                                    <?php if ($user['user_role'] == 'admin' || $user['user_role'] == 'editor' || $notice['is_published'] == true) : ?>
-                                        <h1 class="post-title"><?php echo $notice['title']; ?></h1>
+                                    <?php if ($user['user_role'] == 'admin' || $user['user_role'] == 'editor' || $committeeDetails['is_published'] == true) : ?>
+                                        <h1 class="post-title"><?php echo $committeeDetails['name']; ?></h1>
                                         <hr>
                                         <div class="row">
-                                            <div class='col-md-6 publish_date_div'> Published: <?php echo date("j F,Y", strtotime($notice["created_time"])); ?></div>
-                                            <?php if (!empty($notice['file'])) : ?>
-                                                <div class="col-md-6  download_btn_div">
-                                                    <a class="fa fa-download dowload_btn" title="Download File" href='<?php echo BASE_URL . "upload/notices/" . $notice['file']; ?>' download>
-
-                                                    </a>
-                                                </div>
+                                            <div class='col-md-6 publish_date_div'> Published: <?php echo date("j F,Y", strtotime($committeeDetails["created_time"])); ?></div>
+                                            <?php if (!empty($committeeDetails['file'])) : ?>
+                                            <div class="col-md-6  download_btn_div">
+                                                <a class="fa fa-download dowload_btn" title="Download File" href='<?php echo BASE_URL . "upload/committee/" . $committeeDetails['file']; ?>' download>
+                                  
+                                                </a>
+                                            </div>
                                             <?php endif ?>
                                         </div>
 
                                         <hr>
                                         <div class="post-body-div">
-                                            <?php echo html_entity_decode($notice['description']); ?>
+                                            <?php echo html_entity_decode($committeeDetails['description']); ?>
                                         </div>
                                     <?php else : ?>
-                                        <h2 class="post-title">Notice was not Found</h2>
+                                        <h2 class="post-title">Committee was not Found</h2>
                                     <?php endif ?>
                                 </div>
                             </div>
