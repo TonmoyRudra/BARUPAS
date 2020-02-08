@@ -6,6 +6,7 @@ include('./include/public_fuction.php');
 $committeeDetails = '';
 if (isset($_GET['id']) && $_GET['type_id']) {
     $committeeDetails = getCommitteeById($_GET['id'], $_GET['type_id']);
+    $committee_name = getCommitteeTypeInfoByTypeId($_GET['type_id']);
 }
 if (isset($_SESSION["user"])) {
     $user = $_SESSION['user'];
@@ -22,7 +23,7 @@ if (isset($_SESSION["user"])) {
         <?php include('./404.php'); ?>
     <?php else : ?>
         <div class="styled-heading">
-            <h3> নোটিশ বোর্ড </h3>
+        <h3> <?php echo $committee_name['type_name_bangla'] ?> </h3>
         </div>
         <div class="container">
             <div class="row">

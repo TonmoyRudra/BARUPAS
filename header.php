@@ -133,15 +133,8 @@
                                         <a class="dropdown-item" href="./chairmanMessage.php"> চেয়ারম্যানের বাণী</a>
                                     </div>
                                 </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        কার্যক্রম
-                                        <span class="icon-arrow-down"></span>
-                                    </a>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                        <a class="dropdown-item" href="#"> কার্যক্রম </a>
-                                        <a class="dropdown-item" href="#"> সাম্প্রতিক কার্যক্রম</a>
-                                    </div>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="./underconstruction.php">কার্যক্রম</a>
                                 </li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -167,12 +160,15 @@
                                     </a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                         <a class="dropdown-item" href="./noticeList.php"> নোটিশ বোর্ড </a>
-                                        <a class="dropdown-item" href="#"> ডাউনলোড </a>
+                                        <a class="dropdown-item" href="./underconstruction.php"> ডাউনলোড </a>
                                     </div>
                                 </li>
 
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="#">স্মৃতি চারণ </a>
+                                    <a class="nav-link" href="./underconstruction.php">স্মৃতি চারণ </a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="./underconstruction.php">যোগাযোগ</a>
                                 </li>
                             </ul>
                         </div>
